@@ -17,15 +17,5 @@ RSpec.describe OutCommand do
     it { should answer_to('Okay folks, heading home!') }
     it { should answer_to('heading home') }
   end
-
-  it 'greets the person using the command' do
-    client = double('client')
-    data = double('data', user: 'magic_id')
-    punch_card = double('punch_card')
-    allow_any_instance_of(PunchCardRepository).to receive(:punch_out_user_with_text)
-    allow(UserFinder).to receive(:username_from_id).and_return('magic')
-
-    expect(described_class.new.execute(client, data)).to eq('Godspeed magic!')
-  end
 end
 
