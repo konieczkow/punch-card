@@ -1,6 +1,0 @@
-/out "Reason" (opt)
-/lunch -> same as /out "Lunch break"
-/tesco -> same as /out "Tesco run"
-/in
-/back -> same as /in
-/whos_in
