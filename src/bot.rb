@@ -15,10 +15,7 @@ require_relative 'commands/wheres_everybody_command.rb'
 require_relative 'commands/mention_people_in_command.rb'
 require_relative 'commands/help_command.rb'
 
-ActiveRecord::Base.establish_connection(
-  adapter: 'sqlite3',
-  database: 'punch-card.db'
-)
+ActiveRecord::Base.establish_connection
 
 class PunchCardBot < SlackRubyBot::Bot
   match InCommand.regexp do |client, data, match|
