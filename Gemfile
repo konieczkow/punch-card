@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-
+ruby '2.4.2'
 gem 'slack-ruby-bot'
 gem 'celluloid-io'
 gem 'pry'
-gem 'sqlite3'
+gem 'pg'
 gem 'activerecord'
 gem 'rspec', require: 'spec'
