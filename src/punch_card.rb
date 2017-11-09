@@ -7,6 +7,14 @@ class PunchCard < ActiveRecord::Base
     update_attributes(status_id: Status.out.id, optional_text: text)
   end
 
+  def self.at_home
+    where(optional_text: 'WFH')
+  end
+
+  def self.in_the_office
+    where(optional_text: 'In the office')
+  end
+
   def self.with_in
     where(status_id: Status.in.id)
   end

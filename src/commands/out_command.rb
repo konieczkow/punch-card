@@ -7,6 +7,7 @@ class OutCommand
       /^(?:off +)(?<option>.*)/i,
       /^bye\!?$/i,
       /^bye everybody\!?$/i,
+      /^b[‘’']bye/i,
       /heading home/i
     ]
     Regexp.union(*regexes)

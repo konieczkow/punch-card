@@ -12,6 +12,8 @@ require_relative 'commands/in_command.rb'
 require_relative 'commands/whos_in_command.rb'
 require_relative 'commands/whos_out_command.rb'
 require_relative 'commands/wheres_everybody_command.rb'
+require_relative 'commands/whos_at_home_command.rb'
+require_relative 'commands/whos_in_the_office_command.rb'
 require_relative 'commands/mention_people_in_command.rb'
 require_relative 'commands/help_command.rb'
 
@@ -83,6 +85,24 @@ class PunchCardBot < SlackRubyBot::Bot
 
   match /^who[‘’']s out\??$/i do |client, data, _match|
     response = WhosOutCommand.new.execute(client, data)
+    unless response.empty?
+      client.say(text: response, channel: data.channel)
+    else
+      client.say(text: 'You are here all alone!', channel: data.channel)
+    end
+  end
+
+  match WhosAtHomeCommand.regexp do |client, data, _match|
+    response = WhosAtHomeCommand.new.execute(client, data)
+    unless response.empty?
+      client.say(text: response, channel: data.channel)
+    else
+      client.say(text: 'You are here all alone!', channel: data.channel)
+    end
+  end
+
+  match WhosInTheOfficeCommand.regexp do |client, data, _match|
+    response = WhosInTheOfficeCommand.new.execute(client, data)
     unless response.empty?
       client.say(text: response, channel: data.channel)
     else

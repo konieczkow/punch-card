@@ -1,8 +1,8 @@
-class WhosInCommand
+class WhosInTheOfficeCommand
   def self.regexp
     regexes = [
-      /^who[‘’']s in\??$/i,
-      /^who is in\??$/i
+      /^who[‘’']s (?:in the )?office\??$/i,
+      /^who is (?:in the )office\??$/i
     ]
     Regexp.union(*regexes)
   end
@@ -14,11 +14,11 @@ class WhosInCommand
   private
 
   def header
-    "*People who punched in:*\n"
+    "*People in the office:*\n"
   end
 
   def formatted_list_of_people_ids(client)
-    PunchCard.with_in.map do |punch_card|
+    PunchCard.in_the_office.map do |punch_card|
       PunchCardFormatter.new(punch_card).line(client)
     end.join
   end
