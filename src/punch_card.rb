@@ -7,6 +7,14 @@ class PunchCard < ActiveRecord::Base
     update_attributes(status_id: Status.out.id, optional_text: text)
   end
 
+  def punch_out
+    update_attributes(status_id: Status.out.id)
+  end
+
+  def self.punch_everybody_out
+    all.each(&:punch_out)
+  end
+
   def self.at_home
     where(optional_text: 'WFH')
   end

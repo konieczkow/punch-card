@@ -1,1 +1,1 @@
-bot: bundle exec ruby run_bot
+bot: bundle exec ruby bin/run_bot
