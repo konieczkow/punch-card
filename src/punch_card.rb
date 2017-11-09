@@ -8,7 +8,7 @@ class PunchCard < ActiveRecord::Base
   end
 
   def punch_out
-    update_attributes(status_id: Status.out.id)
+    update_attributes(status_id: Status.out.id, optional_text: nil)
   end
 
   def self.punch_everybody_out
