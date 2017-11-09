@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-$LOAD_PATH.unshift(File.expand_path('../src', __FILE__))
-require 'bot.rb'
-
-puts "Punching everybody out..."
-PunchCardBot.run
