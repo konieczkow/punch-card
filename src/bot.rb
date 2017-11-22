@@ -38,6 +38,15 @@ class PunchCardBot < SlackRubyBot::Bot
     )
   end
 
+  match /^meeting/i do |client, data, _match|
+    InCommand.new('In a meeting').execute(client, data)
+    client.web_client.reactions_add(
+      channel: data.channel,
+      timestamp: data.ts,
+      name: 'briefcase'
+    )
+  end
+
   match /^home/i do |client, data, _match|
     InCommand.new('WFH').execute(client, data)
     client.web_client.reactions_add(

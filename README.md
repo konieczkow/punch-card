@@ -34,6 +34,7 @@ For example, you can add it to crontab if some people forget to punch out at the
 * `morning` - same as `hi`
 * `office` - same as `hi In the office`
 * `home` - same as `hi WFH`
+* `meeting` - same as `hi In a meeting`
 
 *Punching out:*
 
