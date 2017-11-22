@@ -16,6 +16,7 @@ class HelpCommand
       \t`morning` - same as `hi`
       \t`office` - same as `hi In the office`
       \t`home` - same as `hi WFH`
+      \t`meeting` - same as `hi In a meeting`
       *Punching out:*
       \t`out`, `out <optional text>` - punches you out
       \t`off`, `off <optional text>` - same as `out`
