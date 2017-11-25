@@ -1,3 +1,6 @@
+# THIS PROJECT IS NO LONGER MAINTAINED
+# FOR THE CURRENT VERSION GO TO https://github.com/konieczkow/punch_clock
+
 # Punch Card Bot
 
 A bot that keeps track of who's in and who's out of the office.
